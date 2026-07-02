@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Концепт C — Смелый</title><meta name="robots" content="noindex" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<style>
+:root{--bg:#eceef2;--card:#fff;--ink:#0f1420;--muted:#5b6270;--accent:#1f45e5;--accent-ink:#fff}
+*{box-sizing:border-box;margin:0}
+body{font-family:"Manrope",system-ui,sans-serif;background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased}
+.disp{font-family:"Sora",system-ui,sans-serif}
+.wrap{max-width:1280px;margin:0 auto;padding-inline:clamp(20px,4vw,48px)}
+.tag{position:fixed;top:0;left:0;z-index:99;background:var(--accent);color:#fff;font-size:12px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;padding:8px 16px}
+.nav{display:flex;align-items:center;gap:26px;padding-block:22px}
+.logo{font-family:"Sora",sans-serif;font-weight:800;font-size:22px}.logo b{color:var(--accent)}
+.nav .links{display:flex;gap:22px;margin-left:auto;font-size:14px;font-weight:500;color:var(--muted)}
+.nav .cta{background:var(--accent);color:#fff;padding:12px 24px;border-radius:10px;font-weight:700;font-size:14px;text-decoration:none}
+/* hero as bento */
+.hero{display:grid;grid-template-columns:1.5fr 1fr;grid-auto-rows:minmax(0,auto);gap:16px;margin-top:8px}
+.panel{background:var(--card);border-radius:22px;padding:clamp(28px,3vw,48px);overflow:hidden}
+.hero__main{grid-row:span 2;display:flex;flex-direction:column;justify-content:space-between;min-height:520px}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.hero__main h1{font-family:"Sora",sans-serif;font-weight:800;font-size:clamp(40px,5.2vw,76px);line-height:.98;letter-spacing:-.03em;margin-top:18px}
+.hero__main p{color:var(--muted);font-size:18px;max-width:40ch;margin-top:20px}
+.hero__main .cta{display:inline-flex;align-self:flex-start;margin-top:32px;background:var(--accent);color:#fff;padding:16px 30px;border-radius:12px;font-weight:700;text-decoration:none}
+.hero__img{background:#0f1420;padding:0;min-height:250px}
+.hero__img img{width:100%;height:100%;object-fit:cover;border-radius:22px}
+.hero__stat{background:var(--accent);color:#fff;display:flex;flex-direction:column;justify-content:center}
+.hero__stat b{font-family:"Sora",sans-serif;font-size:clamp(40px,5vw,64px);font-weight:800;letter-spacing:-.03em;line-height:1}
+.hero__stat small{opacity:.85;font-size:14px;margin-top:8px}
+/* numbers */
+.figs{margin-top:60px;margin-bottom:40px}
+.figs h2{font-family:"Sora",sans-serif;font-weight:800;font-size:clamp(30px,4vw,54px);letter-spacing:-.02em;margin-bottom:32px}
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.stat{background:var(--card);border-radius:20px;padding:32px 28px;min-height:220px;display:flex;flex-direction:column;justify-content:space-between}
+.stat .cn{font-family:"Sora",sans-serif;font-weight:800;font-size:clamp(44px,4.4vw,72px);line-height:1;letter-spacing:-.03em;color:var(--accent)}
+.stat .cl{color:var(--muted);font-size:15px}
+.stat--wide{grid-column:span 2}
+@media(max-width:920px){.hero{grid-template-columns:1fr}.hero__main{grid-row:auto;min-height:auto}.grid{grid-template-columns:1fr 1fr}.nav .links{display:none}}
+</style>
+</head>
+<body>
+<div class="tag">Концепт C · Смелый</div>
+<div class="wrap">
+  <nav class="nav">
+    <span class="logo">Делова<b>я20</b></span>
+    <span class="links"><a href="#">Формат</a><a href="#">Характеристики</a><a href="#">Локация</a><a href="#">Компания</a></span>
+    <a class="cta" href="#">Оставить заявку</a>
+  </nav>
+
+  <section class="hero">
+    <div class="panel hero__main">
+      <div>
+        <p class="eyebrow">Urban Light Industrial · Москва</p>
+        <h1>Производство и офис внутри Москвы, а не за МКАД</h1>
+        <p>Мультифункциональный городской индустриальный центр для малого и среднего бизнеса.</p>
+      </div>
+      <a class="cta" href="#">Оставить заявку →</a>
+    </div>
+    <div class="panel hero__img"><img src="images/company-day.jpg" alt="" /></div>
+    <div class="panel hero__stat"><b>50 280 м²</b><small>Общая площадь · 3 этажа · сдача 4 кв. 2027</small></div>
+  </section>
+
+  <section class="figs">
+    <h2>Цифры, которыми гордимся</h2>
+    <div class="grid">
+      <div class="stat stat--wide"><div class="cn">70+</div><div class="cl">Вт/м² — электроснабжение объектов</div></div>
+      <div class="stat"><div class="cn">8+</div><div class="cl">метров — высота первых этажей</div></div>
+      <div class="stat"><div class="cn">0,5</div><div class="cl">км до МСД</div></div>
+      <div class="stat"><div class="cn">7</div><div class="cl">км до МКАД</div></div>
+      <div class="stat"><div class="cn">11</div><div class="cl">км до ТТК</div></div>
+      <div class="stat"><div class="cn">8+</div><div class="cl">млрд ₽ инвестиций</div></div>
+    </div>
+  </section>
+</div>
+</body>
+</html>
