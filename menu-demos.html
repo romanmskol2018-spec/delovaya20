@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Деловая20 — варианты меню</title>
+  <meta name="robots" content="noindex" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root{
+      --accent:#e3a84e; --accent-hi:#f2c176; --accent-ink:#14140f;
+      --display:"Sora",system-ui,sans-serif; --body:"Manrope",system-ui,sans-serif;
+    }
+    *{box-sizing:border-box;margin:0}
+    body{font-family:var(--body);background:#e9e5dd;color:#211e18}
+    .demo{position:relative;height:360px;overflow:hidden;border-bottom:2px solid #d8d2c6}
+    .demo__bg{position:absolute;inset:0;background:url("images/hero-night.jpg") center/cover;filter:brightness(.9)}
+    .demo__bg::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(13,12,9,.5),rgba(13,12,9,.15))}
+    .demo__tag{position:absolute;left:24px;bottom:20px;z-index:5;color:#fff;font-family:var(--display);font-weight:700;font-size:22px;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+    .demo__tag small{display:block;font-family:var(--body);font-weight:500;font-size:14px;opacity:.85;margin-top:4px}
+    .row{max-width:1180px;margin:0 auto;padding-inline:32px}
+    .brand{display:inline-flex;align-items:center;gap:10px;font-family:var(--display);font-weight:700;font-size:20px}
+    .brand__mark{display:grid;place-items:center;width:38px;height:38px;border-radius:11px;background:rgba(227,168,78,.16);border:1px solid rgba(227,168,78,.45);color:var(--accent)}
+    .brand__mark svg{width:24px;height:24px}
+    .acc{color:var(--accent)}
+    .nav{display:flex;gap:6px}
+    .nav a{padding:9px 14px;border-radius:999px;font-size:15px;font-weight:500;text-decoration:none;transition:.2s}
+    .cta{display:inline-flex;align-items:center;padding:12px 22px;border-radius:999px;background:var(--accent);color:var(--accent-ink);font-weight:700;font-size:15px;text-decoration:none;white-space:nowrap;box-shadow:0 12px 28px rgba(227,168,78,.34);transition:.2s}
+    .cta:hover{background:var(--accent-hi);transform:translateY(-1px)}
+    .phone{font-weight:600;font-size:15px;white-space:nowrap}
+
+    /* ---------- Вариант 1: плавающая капсула ---------- */
+    .v1{position:relative;z-index:4;display:flex;align-items:center;gap:20px;max-width:1180px;margin:22px auto 0;padding:10px 12px 10px 22px;border-radius:999px;
+        background:rgba(20,18,14,.6);backdrop-filter:blur(18px) saturate(150%);-webkit-backdrop-filter:blur(18px) saturate(150%);
+        border:1px solid rgba(255,255,255,.12);box-shadow:0 22px 55px rgba(0,0,0,.45)}
+    .v1 .brand__name{color:#fff}
+    .v1 .nav{margin-inline:auto}
+    .v1 .nav a{color:rgba(255,255,255,.72)}
+    .v1 .nav a:hover{color:#fff;background:rgba(255,255,255,.1)}
+    .v1 .phone{color:rgba(255,255,255,.82)}
+
+    /* ---------- Вариант 2: плотный чёрный, минимал ---------- */
+    .v2{position:relative;z-index:4;background:#100e0a;border-bottom:1px solid rgba(255,255,255,.08)}
+    .v2 .row{display:flex;align-items:center;gap:24px;height:74px}
+    .v2 .brand__name{color:#fff}
+    .v2 .nav{margin-inline:auto;gap:2px}
+    .v2 .nav a{position:relative;color:rgba(255,255,255,.62);font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;border-radius:0;padding:9px 12px}
+    .v2 .nav a::after{content:"";position:absolute;left:12px;right:12px;bottom:2px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .3s}
+    .v2 .nav a:hover{color:#fff}
+    .v2 .nav a:hover::after{transform:scaleX(1)}
+    .v2 .phone{color:rgba(255,255,255,.8)}
+
+    /* ---------- Вариант 3: светлый минимал ---------- */
+    .v3{position:relative;z-index:4;background:rgba(247,244,238,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(40,32,18,.12)}
+    .v3 .row{display:flex;align-items:center;gap:24px;height:74px}
+    .v3 .brand__name{color:#211e18}
+    .v3 .brand__mark{background:rgba(227,168,78,.14)}
+    .v3 .nav{margin-inline:auto}
+    .v3 .nav a{color:#5a5348}
+    .v3 .nav a:hover{color:#211e18;background:rgba(40,32,18,.06)}
+    .v3 .phone{color:#5a5348}
+
+    .note{max-width:1180px;margin:0 auto;padding:26px 32px;font-size:15px;color:#5a5348}
+    .note b{color:#211e18}
+  </style>
+</head>
+<body>
+
+  <!-- Вариант 1 -->
+  <div class="demo">
+    <div class="demo__bg"></div>
+    <nav class="v1">
+      <a class="brand" href="#"><span class="brand__mark"><svg viewBox="0 0 32 32" fill="none"><rect x="6" y="14" width="4" height="12" rx="1" fill="currentColor"/><rect x="14" y="8" width="4" height="18" rx="1" fill="currentColor"/><rect x="22" y="11" width="4" height="15" rx="1" fill="currentColor"/></svg></span><span class="brand__name">Делова<span class="acc">я20</span></span></a>
+      <div class="nav"><a href="#">Характеристики</a><a href="#">Локация</a><a href="#">Сделка</a><a href="#">Компания</a><a href="#">Новости</a></div>
+      <a class="cta" href="#">Оставить заявку</a>
+    </nav>
+    <div class="demo__tag">Вариант 1 — Плавающая капсула<small>отдельное скруглённое меню, парит с отступом, тёмное стекло</small></div>
+  </div>
+
+  <!-- Вариант 2 -->
+  <div class="demo">
+    <div class="demo__bg"></div>
+    <div class="v2">
+      <div class="row">
+        <a class="brand" href="#"><span class="brand__mark"><svg viewBox="0 0 32 32" fill="none"><rect x="6" y="14" width="4" height="12" rx="1" fill="currentColor"/><rect x="14" y="8" width="4" height="18" rx="1" fill="currentColor"/><rect x="22" y="11" width="4" height="15" rx="1" fill="currentColor"/></svg></span><span class="brand__name">Делова<span class="acc">я20</span></span></a>
+        <div class="nav"><a href="#">Характеристики</a><a href="#">Локация</a><a href="#">Сделка</a><a href="#">Компания</a><a href="#">Новости</a></div>
+        <span class="phone">+7 (495) 969-16-15</span>
+        <a class="cta" href="#">Оставить заявку</a>
+      </div>
+    </div>
+    <div class="demo__tag" style="bottom:16px">Вариант 2 — Плотный чёрный, минимал<small>во всю ширину, чёткий край, амбер-подчёркивание пункта</small></div>
+  </div>
+
+  <!-- Вариант 3 -->
+  <div class="demo">
+    <div class="demo__bg"></div>
+    <div class="v3">
+      <div class="row">
+        <a class="brand" href="#"><span class="brand__mark"><svg viewBox="0 0 32 32" fill="none"><rect x="6" y="14" width="4" height="12" rx="1" fill="currentColor"/><rect x="14" y="8" width="4" height="18" rx="1" fill="currentColor"/><rect x="22" y="11" width="4" height="15" rx="1" fill="currentColor"/></svg></span><span class="brand__name">Делова<span class="acc">я20</span></span></a>
+        <div class="nav"><a href="#">Характеристики</a><a href="#">Локация</a><a href="#">Сделка</a><a href="#">Компания</a><a href="#">Новости</a></div>
+        <span class="phone">+7 (495) 969-16-15</span>
+        <a class="cta" href="#">Оставить заявку</a>
+      </div>
+    </div>
+    <div class="demo__tag" style="bottom:16px">Вариант 3 — Светлый минимал<small>белая/айвори панель, тёмный текст, редакторски-чисто</small></div>
+  </div>
+
+  <div class="note">Наведите на пункты меню, чтобы увидеть ховеры. Выберите номер — применю на весь сайт. Открыть: <b>http://127.0.0.1:8000/menu-demos.html</b></div>
+
+</body>
+</html>

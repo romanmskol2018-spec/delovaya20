@@ -107,7 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* интерактив: при наведении на «Цифры, которыми гордимся» число пере-анимируется */
   if (!prefersReduced) {
-    document.querySelectorAll(".proud__item").forEach((item) => {
+    document.querySelectorAll(".proud__stat").forEach((item) => {
       const numEl = item.querySelector("[data-count]");
       if (numEl) item.addEventListener("pointerenter", () => runCounter(numEl));
     });

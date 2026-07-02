@@ -480,58 +480,93 @@ ul, ol { list-style: none; padding: 0; }
 }
 .fcard p { color: var(--text-muted); font-size: 16px; }
 
-/* ---------- proud numbers band (интерактивная) ---------- */
-.proud__band {
+/* ---------- proud numbers (бенто: карточка + крупные числа) ---------- */
+.proud__bento {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: 0.85fr 1.25fr;
+  gap: var(--gap);
   margin-top: clamp(32px, 5vw, 56px);
-  border: 1px solid var(--line);
-  border-radius: var(--radius);
-  overflow: hidden;
-  background: var(--surface);
-  box-shadow: var(--shadow-sm);
+  align-items: stretch;
 }
-.proud__item {
-  position: relative;
-  padding: clamp(26px, 3vw, 44px) 20px;
-  text-align: center;
-  border-right: 1px solid var(--line);
+.proud__feature {
   display: flex;
   flex-direction: column;
-  gap: 4px;
-  transition: background .35s var(--ease);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(28px, 3vw, 40px);
+  overflow: hidden;
 }
-.proud__item::before {
+.proud__feature .section__title { margin-top: 4px; }
+.proud__feature-text { color: var(--text-muted); margin-top: 16px; font-size: 16px; max-width: 42ch; }
+.proud__feature-img {
+  margin-top: clamp(24px, 3vw, 36px);
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  flex: 1;
+  min-height: 200px;
+}
+.proud__feature-img img { width: 100%; height: 100%; object-fit: cover; }
+
+.proud__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap);
+}
+.proud__stat {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-sm);
+  padding: clamp(24px, 2.6vw, 36px);
+  min-height: 190px;
+  overflow: hidden;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+}
+.proud__stat--hero { grid-column: 1 / -1; }
+.proud__stat::before {
   content: "";
-  position: absolute; top: 0; left: 50%;
+  position: absolute; top: 0; left: 0;
   width: 0; height: 3px;
-  transform: translateX(-50%);
   background: linear-gradient(90deg, var(--accent), var(--accent-hi));
-  transition: width .4s var(--ease);
+  transition: width .45s var(--ease);
 }
-.proud__item:last-child { border-right: none; }
-.proud__item:hover { background: var(--accent-soft); }
-.proud__item:hover::before { width: 100%; }
+.proud__stat:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: var(--accent-line); }
+.proud__stat:hover::before { width: 100%; }
 .proud__num {
   font-family: var(--font-display);
   font-weight: 800;
-  font-size: clamp(30px, 4vw, 48px);
-  line-height: 1;
-  letter-spacing: -.03em;
+  font-size: clamp(46px, 5.5vw, 82px);
+  line-height: .92;
+  letter-spacing: -.04em;
   color: var(--num);
-  transition: transform .4s var(--ease), color .3s var(--ease);
+  transition: color .3s var(--ease);
 }
-.proud__item:hover .proud__num { color: var(--accent-strong); transform: scale(1.09); }
+.proud__stat--hero .proud__num { font-size: clamp(54px, 7vw, 104px); }
+.proud__stat:hover .proud__num { color: var(--accent-strong); }
 .proud__unit {
   font-family: var(--font-display);
-  font-weight: 600;
-  font-size: 15px;
-  color: var(--text);
+  font-weight: 700;
+  font-size: clamp(15px, 1.3vw, 18px);
+  color: var(--accent-strong);
+  margin-top: 8px;
 }
-.proud__label {
-  font-size: 13.5px;
-  color: var(--text-dim);
-  margin-top: 6px;
+.proud__desc {
+  color: var(--text-muted);
+  font-size: 15px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+@media (max-width: 900px) {
+  .proud__bento { grid-template-columns: 1fr; }
+  .proud__feature-img { min-height: 220px; }
+}
+@media (max-width: 560px) {
+  .proud__grid { grid-template-columns: 1fr; }
 }
 
 /* ---------- showcase media band ---------- */
@@ -569,6 +604,21 @@ ul, ol { list-style: none; padding: 0; }
   max-width: 56ch;
   font-size: clamp(15px, 1.5vw, 18px);
 }
+
+/* паттерн-подложка секции «Характеристики» */
+#specs { position: relative; overflow: hidden; }
+#specs::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(rgba(40, 32, 18, .05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(40, 32, 18, .05) 1px, transparent 1px);
+  background-size: 46px 46px;
+  pointer-events: none;
+  mask-image: radial-gradient(135% 95% at 50% 0%, #000 22%, transparent 82%);
+  -webkit-mask-image: radial-gradient(135% 95% at 50% 0%, #000 22%, transparent 82%);
+}
+#specs > .container { position: relative; z-index: 1; }
 
 /* ---------- specs bento ---------- */
 .specs__grid {

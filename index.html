@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css?v=2" />
+  <link rel="stylesheet" href="styles.css?v=3" />
   <!-- Ускоряем LCP: заранее грузим фон первого экрана -->
   <link rel="preload" as="image" href="images/hero-night.jpg" fetchpriority="high" />
 
@@ -203,34 +203,47 @@
     </section>
 
     <!-- ============ ЦИФРЫ, КОТОРЫМИ ГОРДИМСЯ ============ -->
-    <section class="section section--tight proud" aria-labelledby="proud-title">
+    <section class="section proud" aria-labelledby="proud-title">
       <div class="container">
-        <h2 class="section__title section__title--center reveal" id="proud-title">Цифры, которыми гордимся</h2>
-        <div class="proud__band reveal">
-          <div class="proud__item">
-            <span class="proud__num"><span data-count data-target="70">0</span>+</span>
-            <span class="proud__unit">Вт/м²</span>
-            <span class="proud__label">Электроснабжение</span>
+        <div class="proud__bento">
+          <div class="proud__feature reveal">
+            <p class="eyebrow">Чем гордимся</p>
+            <h2 class="section__title" id="proud-title">Цифры, которыми гордимся</h2>
+            <p class="proud__feature-text">
+              Инженерия под реальное производство: серьёзная энергомощность, высокие
+              потолки и близость к главным магистралям Москвы.
+            </p>
+            <div class="proud__feature-img">
+              <img src="images/company-day.jpg" alt="Дневной рендер корпуса С комплекса Деловая20" loading="lazy" />
+            </div>
           </div>
-          <div class="proud__item">
-            <span class="proud__num"><span data-count data-target="8">0</span>+</span>
-            <span class="proud__unit">метров</span>
-            <span class="proud__label">Высота первых этажей</span>
-          </div>
-          <div class="proud__item">
-            <span class="proud__num"><span data-count data-target="0.5" data-decimals="1">0</span></span>
-            <span class="proud__unit">км</span>
-            <span class="proud__label">До МСД</span>
-          </div>
-          <div class="proud__item">
-            <span class="proud__num"><span data-count data-target="7">0</span></span>
-            <span class="proud__unit">км</span>
-            <span class="proud__label">До МКАД</span>
-          </div>
-          <div class="proud__item">
-            <span class="proud__num"><span data-count data-target="11">0</span></span>
-            <span class="proud__unit">км</span>
-            <span class="proud__label">До ТТК</span>
+
+          <div class="proud__grid reveal">
+            <div class="proud__stat proud__stat--hero">
+              <span class="proud__num"><span data-count data-target="70">0</span>+</span>
+              <span class="proud__unit">Вт/м²</span>
+              <span class="proud__desc">Электроснабжение объектов</span>
+            </div>
+            <div class="proud__stat">
+              <span class="proud__num"><span data-count data-target="8">0</span>+</span>
+              <span class="proud__unit">метров</span>
+              <span class="proud__desc">Высота первых этажей</span>
+            </div>
+            <div class="proud__stat">
+              <span class="proud__num"><span data-count data-target="0.5" data-decimals="1">0</span></span>
+              <span class="proud__unit">км</span>
+              <span class="proud__desc">До МСД</span>
+            </div>
+            <div class="proud__stat">
+              <span class="proud__num"><span data-count data-target="7">0</span></span>
+              <span class="proud__unit">км</span>
+              <span class="proud__desc">До МКАД</span>
+            </div>
+            <div class="proud__stat">
+              <span class="proud__num"><span data-count data-target="11">0</span></span>
+              <span class="proud__unit">км</span>
+              <span class="proud__desc">До ТТК</span>
+            </div>
           </div>
         </div>
       </div>
@@ -795,6 +808,6 @@
     <span class="lightbox__hint">Клик вне изображения или Esc — закрыть</span>
   </div>
 
-  <script src="script.js?v=2" defer></script>
+  <script src="script.js?v=3" defer></script>
 </body>
 </html>
