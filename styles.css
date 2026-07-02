@@ -216,20 +216,18 @@ ul, ol { list-style: none; padding: 0; }
 }
 .btn--ghost:active { transform: translateY(0) scale(.985); }
 
-/* ---------- header (премиальная тёмная панель) ---------- */
+/* ---------- header (плавающая капсула) ---------- */
 .site-header {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(17, 15, 11, .68);
-  backdrop-filter: blur(20px) saturate(150%);
-  -webkit-backdrop-filter: blur(20px) saturate(150%);
-  border-bottom: 1px solid rgba(255, 255, 255, .07);
-  transition: background .35s var(--ease), border-color .35s var(--ease);
+  padding: 16px clamp(16px, 4vw, 40px) 0;
+  background: transparent;
 }
-.site-header[data-scrolled] {
-  background: rgba(14, 12, 8, .92);
-  border-bottom-color: rgba(255, 255, 255, .1);
+.site-header .phone-link { display: none; }
+.site-header[data-scrolled] .header__inner {
+  background: rgba(16, 14, 10, .82);
+  box-shadow: 0 16px 44px rgba(0, 0, 0, .5);
 }
 .site-header .brand__name { color: #fff; }
 .site-header .brand__accent { color: var(--accent); }
@@ -243,10 +241,20 @@ ul, ol { list-style: none; padding: 0; }
 .header__inner {
   position: relative;
   z-index: 1;
+  max-width: var(--maxw);
+  margin-inline: auto;
   display: flex;
   align-items: center;
-  gap: 24px;
-  height: 72px;
+  gap: 20px;
+  height: 64px;
+  padding: 0 12px 0 22px;
+  border-radius: var(--pill);
+  background: rgba(20, 18, 14, .58);
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+  border: 1px solid rgba(255, 255, 255, .12);
+  box-shadow: 0 22px 55px rgba(0, 0, 0, .4);
+  transition: background .3s var(--ease), box-shadow .3s var(--ease);
 }
 
 .brand {
@@ -322,11 +330,14 @@ ul, ol { list-style: none; padding: 0; }
 .mobile-menu {
   position: relative;
   z-index: 1;
-  border-top: 1px solid rgba(255, 255, 255, .08);
-  background: rgba(14, 12, 8, .98);
+  max-width: var(--maxw);
+  margin: 10px auto 0;
+  border: 1px solid rgba(255, 255, 255, .1);
+  border-radius: var(--radius);
+  background: rgba(16, 14, 10, .97);
   backdrop-filter: blur(20px) saturate(150%);
   -webkit-backdrop-filter: blur(20px) saturate(150%);
-  padding: 18px clamp(20px, 5vw, 40px) 28px;
+  padding: 12px 22px 22px;
 }
 .mobile-menu nav { display: flex; flex-direction: column; }
 .mobile-menu nav a {
