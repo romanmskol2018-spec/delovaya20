@@ -6,31 +6,31 @@
    ========================================================= */
 
 :root {
-  /* Поверхности — СВЕТЛЫЙ корпус */
-  --bg:          #fbfcfd;   /* базовый почти-белый */
-  --bg-alt:      #f1f4f7;   /* чередующиеся секции */
-  --surface:     #ffffff;   /* карточки */
-  --surface-2:   #f5f7fa;   /* hover */
+  /* Поверхности — ТЁПЛЫЙ светлый корпус (айвори, не холодный флэт-белый) */
+  --bg:          #f2efe8;   /* тёплый айвори */
+  --bg-alt:      #e8e3d9;   /* глубже — вес и контраст между секциями */
+  --surface:     #ffffff;   /* белые карточки — попадают в контраст на айвори */
+  --surface-2:   #f7f4ee;   /* hover */
 
-  /* Линии (тёмные на светлом) */
-  --line:        rgba(20, 26, 36, .10);
-  --line-strong: rgba(20, 26, 36, .17);
+  /* Линии (тёплые тёмные на светлом) */
+  --line:        rgba(40, 32, 18, .12);
+  --line-strong: rgba(40, 32, 18, .20);
 
-  /* Текст */
-  --text:        #191c22;
-  --text-muted:  #545b66;
-  --text-dim:    #838a95;
+  /* Текст (тёплый графит) */
+  --text:        #211e18;
+  --text-muted:  #5a5348;
+  --text-dim:    #8b8477;
 
   /* Акцент (единственный на всю страницу) */
   --accent:        #e3a84e;   /* тёплое золото — заливки/декор/кнопки */
   --accent-hi:     #f2c176;   /* светлее — hover/градиент */
-  --accent-ink:    #14171c;   /* тёмный текст на амбере */
-  --accent-strong: #96640d;   /* читаемый амбер для текста/ссылок/eyebrow на светлом */
-  --accent-soft:   rgba(227, 168, 78, .14);
-  --accent-line:   rgba(227, 168, 78, .45);
+  --accent-ink:    #14140f;   /* тёмный текст на амбере */
+  --accent-strong: #8f6410;   /* читаемый амбер для текста/ссылок/eyebrow на светлом */
+  --accent-soft:   rgba(227, 168, 78, .16);
+  --accent-line:   rgba(227, 168, 78, .5);
 
-  /* Цвет крупных дисплейных цифр (в светлом — графит) */
-  --num: #191c22;
+  /* Цвет крупных дисплейных цифр (в светлом — тёплый графит) */
+  --num: #211e18;
 
   /* Геометрия */
   --radius:    14px;
@@ -39,10 +39,10 @@
   --maxw:      1180px;
   --gap:       clamp(16px, 2.2vw, 28px);
 
-  /* Тени (мягкие, тонированные под графит) */
-  --shadow:     0 24px 60px rgba(23, 29, 40, .12);
-  --shadow-sm:  0 10px 30px rgba(23, 29, 40, .08);
-  --shadow-acc: 0 14px 34px rgba(227, 168, 78, .32);
+  /* Тени (глубокие, тёплые — «вес» и дороговизна) */
+  --shadow:     0 30px 70px rgba(45, 34, 16, .16);
+  --shadow-sm:  0 14px 34px rgba(45, 34, 16, .10);
+  --shadow-acc: 0 16px 38px rgba(227, 168, 78, .36);
 
   /* Типографика */
   --font-display: "Sora", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
@@ -52,23 +52,23 @@
 }
 
 /* ТЁМНЫЙ кинематографичный контекст — герой, карта, шоукейс, футер.
-   Переопределяет токены обратно в графит; компоненты внутри становятся тёмными. */
+   Тёплый уголь (не плоский чёрный), приподнятые поверхности. */
 .theme-dark {
-  --bg:          #0d0f13;
-  --bg-alt:      #101318;
-  --surface:     #161a21;
-  --surface-2:   #1c212a;
-  --line:        rgba(255, 255, 255, .08);
-  --line-strong: rgba(255, 255, 255, .16);
-  --text:        #eef1f4;
-  --text-muted:  #b4bbc6;
-  --text-dim:    #7b828e;
+  --bg:          #16151b;
+  --bg-alt:      #1b1922;
+  --surface:     #221f2a;
+  --surface-2:   #2a2833;
+  --line:        rgba(255, 255, 255, .09);
+  --line-strong: rgba(255, 255, 255, .17);
+  --text:        #f3f1ea;
+  --text-muted:  #bab4ab;
+  --text-dim:    #857f79;
   --accent-strong: #f2c176;
-  --accent-soft:   rgba(227, 168, 78, .12);
-  --accent-line:   rgba(227, 168, 78, .35);
+  --accent-soft:   rgba(227, 168, 78, .13);
+  --accent-line:   rgba(227, 168, 78, .38);
   --num: var(--accent);
-  --shadow:     0 24px 60px rgba(0, 0, 0, .45);
-  --shadow-sm:  0 10px 30px rgba(0, 0, 0, .38);
+  --shadow:     0 26px 64px rgba(0, 0, 0, .5);
+  --shadow-sm:  0 12px 32px rgba(0, 0, 0, .42);
   color: var(--text);
 }
 
@@ -91,6 +91,7 @@ body {
 img, svg, iframe { display: block; max-width: 100%; }
 a { color: inherit; text-decoration: none; }
 button { font: inherit; cursor: pointer; }
+ul, ol { list-style: none; padding: 0; }
 
 /* атрибут hidden всегда скрывает элемент (перебивает display у .form / .form-success / .mobile-menu) */
 [hidden] { display: none !important; }
@@ -215,7 +216,7 @@ button { font: inherit; cursor: pointer; }
 }
 .btn--ghost:active { transform: translateY(0) scale(.985); }
 
-/* ---------- header (адаптивный: прозрачный над героем → белый при скролле) ---------- */
+/* ---------- header (адаптивный: прозрачный над героем → айвори при скролле) ---------- */
 .site-header {
   position: sticky;
   top: 0;
@@ -224,12 +225,22 @@ button { font: inherit; cursor: pointer; }
   border-bottom: 1px solid transparent;
   transition: background .3s var(--ease), border-color .3s var(--ease);
 }
+/* тёмный скрим сверху — гарантирует читаемость светлого лого над героем */
+.site-header::before {
+  content: "";
+  position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, .4), rgba(0, 0, 0, 0));
+  opacity: 1;
+  transition: opacity .3s var(--ease);
+  pointer-events: none;
+}
 .site-header[data-scrolled] {
-  background: rgba(251, 252, 253, .82);
+  background: rgba(242, 239, 232, .86);
   backdrop-filter: blur(14px) saturate(150%);
   -webkit-backdrop-filter: blur(14px) saturate(150%);
   border-bottom-color: var(--line);
 }
+.site-header[data-scrolled]::before { opacity: 0; }
 /* --- над героем (по умолчанию): светлый контент --- */
 .site-header .brand__name { color: #fff; }
 .site-header .nav a { color: rgba(255, 255, 255, .76); }
@@ -245,6 +256,8 @@ button { font: inherit; cursor: pointer; }
 .site-header[data-scrolled] .burger { border-color: var(--line-strong); }
 .site-header[data-scrolled] .burger span { background: var(--text); }
 .header__inner {
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   gap: 24px;
@@ -322,6 +335,8 @@ button { font: inherit; cursor: pointer; }
 .burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .mobile-menu {
+  position: relative;
+  z-index: 1;
   border-top: 1px solid var(--line);
   background: var(--bg);
   padding: 18px clamp(20px, 5vw, 40px) 28px;
@@ -598,43 +613,66 @@ button { font: inherit; cursor: pointer; }
   margin-top: clamp(36px, 5vw, 56px);
 }
 .ps__col {
+  position: relative;
   border-radius: var(--radius);
-  padding: clamp(28px, 3.5vw, 40px);
+  padding: clamp(30px, 3.6vw, 46px);
   border: 1px solid var(--line);
+  overflow: hidden;
 }
-.ps__col--problem { background: var(--surface); }
+/* Проблема — приглушённая, «весомая» */
+.ps__col--problem { background: var(--surface-2); }
+/* Решение — приподнятое, светлое, с амбер-акцентом */
 .ps__col--solution {
-  background: linear-gradient(160deg, var(--accent-soft), transparent 70%), var(--surface);
+  background:
+    radial-gradient(130% 100% at 100% 0%, var(--accent-soft), transparent 58%),
+    var(--surface);
   border-color: var(--accent-line);
+  box-shadow: var(--shadow);
 }
+.ps__col--solution::after {
+  content: "";
+  position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-hi));
+}
+
+.ps__tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.ps__tag--problem { color: var(--text-dim); }
+.ps__tag--solution { color: var(--accent-strong); }
+
 .ps__heading {
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: clamp(20px, 2.1vw, 25px);
   font-weight: 600;
-  margin-bottom: 22px;
+  margin-bottom: 24px;
   letter-spacing: -.01em;
 }
-.ps__list { list-style: none; display: grid; gap: 16px; }
+.ps__list { display: grid; gap: 18px; }
 .ps__list li {
   position: relative;
-  padding-left: 30px;
+  padding-left: 36px;
   color: var(--text-muted);
   font-size: 16px;
+  line-height: 1.5;
 }
 .ps__list li::before {
   content: "";
-  position: absolute; left: 4px; top: 10px;
-  width: 8px; height: 8px;
-  border-radius: 2px;
-  background: var(--text-dim);
-}
-.ps__list--check li::before {
-  content: "";
-  left: 2px; top: 4px;
-  width: 16px; height: 16px;
+  position: absolute; left: 0; top: 1px;
+  width: 22px; height: 22px;
   border-radius: 50%;
   background:
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2314171c' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m20 6-11 11-5-5'/%3E%3C/svg%3E") center / 11px no-repeat,
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238b8477' stroke-width='2.6' stroke-linecap='round'%3E%3Cpath d='M6 12h12'/%3E%3C/svg%3E") center / 12px no-repeat,
+    rgba(40, 32, 18, .08);
+}
+.ps__list--check li::before {
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%2314140f' stroke-width='3.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m20 6-11 11-5-5'/%3E%3C/svg%3E") center / 12px no-repeat,
     var(--accent);
 }
 
@@ -1388,4 +1426,43 @@ button { font: inherit; cursor: pointer; }
 
 @media (max-width: 1100px) {
   .hero__card { display: none; }
+}
+
+/* =========================================================
+   ЛАЙТБОКС ГАЛЕРЕИ — картинка на весь экран по клику
+   ========================================================= */
+.gallery__item { cursor: zoom-in; }
+.lightbox {
+  position: fixed; inset: 0; z-index: 200;
+  display: grid; place-items: center;
+  padding: clamp(16px, 4vw, 52px);
+  background: rgba(10, 9, 7, .92);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  animation: lbFade .3s var(--ease);
+}
+@keyframes lbFade { from { opacity: 0; } to { opacity: 1; } }
+.lightbox__img {
+  max-width: 100%; max-height: 100%;
+  width: auto; height: auto;
+  border-radius: var(--radius);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, .7);
+  animation: lbZoom .35s var(--ease);
+}
+@keyframes lbZoom { from { transform: scale(.94); opacity: .5; } to { transform: scale(1); opacity: 1; } }
+.lightbox__close {
+  position: absolute;
+  top: clamp(14px, 3vw, 30px); right: clamp(14px, 3vw, 30px);
+  width: 48px; height: 48px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: rgba(255, 255, 255, .1);
+  border: 1px solid rgba(255, 255, 255, .25);
+  color: #fff; cursor: pointer;
+  transition: background .2s var(--ease), transform .3s var(--ease);
+}
+.lightbox__close:hover { background: rgba(255, 255, 255, .2); transform: rotate(90deg); }
+.lightbox__close svg { width: 22px; height: 22px; }
+.lightbox__hint {
+  position: absolute; bottom: clamp(14px, 3vw, 28px); left: 50%; transform: translateX(-50%);
+  color: rgba(255, 255, 255, .55); font-size: 13px; letter-spacing: .03em;
 }

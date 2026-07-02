@@ -303,3 +303,42 @@ document.addEventListener("DOMContentLoaded", () => {
     init();
   }
 })();
+
+/* =========================================================
+   ГАЛЕРЕЯ — лайтбокс (картинка на весь экран)
+   ========================================================= */
+(function galleryLightbox() {
+  const init = () => {
+    const lb = document.querySelector("[data-lightbox]");
+    if (!lb) return;
+    const lbImg = lb.querySelector("[data-lightbox-img]");
+    const closeBtn = lb.querySelector("[data-lightbox-close]");
+    const items = document.querySelectorAll(".gallery__item img");
+
+    const open = (src, alt) => {
+      lbImg.src = src;
+      lbImg.alt = alt || "";
+      lb.hidden = false;
+      document.body.style.overflow = "hidden";
+      closeBtn?.focus();
+    };
+    const close = () => {
+      lb.hidden = true;
+      lbImg.removeAttribute("src");
+      document.body.style.overflow = "";
+    };
+
+    items.forEach((img) => {
+      img.addEventListener("click", () => open(img.currentSrc || img.src, img.alt));
+    });
+    closeBtn?.addEventListener("click", close);
+    lb.addEventListener("click", (e) => { if (e.target === lb) close(); });
+    document.addEventListener("keydown", (e) => { if (e.key === "Escape" && !lb.hidden) close(); });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } else {
+    init();
+  }
+})();

@@ -389,6 +389,7 @@
 
         <div class="ps">
           <div class="ps__col ps__col--problem reveal">
+            <span class="ps__tag ps__tag--problem">Проблема</span>
             <h3 class="ps__heading">Что мешает производству сегодня</h3>
             <ul class="ps__list">
               <li>Промышленные территории вовлекаются в программу КРТ, площадки сносят — производства вынуждены переезжать.</li>
@@ -398,6 +399,7 @@
           </div>
 
           <div class="ps__col ps__col--solution reveal">
+            <span class="ps__tag ps__tag--solution">Решение</span>
             <h3 class="ps__heading">Как это закрывает Деловая20</h3>
             <ul class="ps__list ps__list--check">
               <li>Близость к местам проживания квалифицированного персонала и развитый общественный транспорт.</li>
@@ -823,6 +825,15 @@
       <a href="privacy.html">Политика конфиденциальности</a>
     </div>
   </footer>
+
+  <!-- Лайтбокс галереи -->
+  <div class="lightbox" data-lightbox hidden>
+    <button class="lightbox__close" type="button" aria-label="Закрыть" data-lightbox-close>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M6 6 18 18M18 6 6 18"/></svg>
+    </button>
+    <img class="lightbox__img" data-lightbox-img alt="" />
+    <span class="lightbox__hint">Клик вне изображения или Esc — закрыть</span>
+  </div>
 
   <script src="script.js" defer></script>
 </body>
