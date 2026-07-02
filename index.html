@@ -36,7 +36,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="styles.css?v=2" />
   <!-- Ускоряем LCP: заранее грузим фон первого экрана -->
   <link rel="preload" as="image" href="images/hero-night.jpg" fetchpriority="high" />
 
@@ -113,7 +113,6 @@
       </a>
 
       <nav class="nav" aria-label="Основная навигация">
-        <a href="#format">Формат</a>
         <a href="#specs">Характеристики</a>
         <a href="#location">Локация</a>
         <a href="#deal">Сделка</a>
@@ -134,7 +133,6 @@
     <!-- Мобильное меню -->
     <div class="mobile-menu" id="mobile-menu" data-mobile-menu hidden>
       <nav aria-label="Мобильная навигация">
-        <a href="#format">Формат</a>
         <a href="#specs">Характеристики</a>
         <a href="#location">Локация</a>
         <a href="#deal">Форматы сделки</a>
@@ -201,48 +199,6 @@
             <dd><span class="num" data-count data-target="8">0</span>+ млрд ₽</dd>
           </div>
         </dl>
-      </div>
-    </section>
-
-    <!-- ============ 2. О ФОРМАТЕ ============ -->
-    <section class="section" id="format" aria-labelledby="format-title">
-      <div class="container">
-        <div class="format__head">
-          <div class="reveal">
-            <p class="eyebrow">Новый формат недвижимости</p>
-            <h2 class="section__title" id="format-title">Что такое Urban&nbsp;Light&nbsp;Industrial</h2>
-          </div>
-          <p class="section__lead reveal">
-            Лёгкое производство, офисные и представительские пространства в одном месте —
-            в сформированной городской среде, а не в полях за городом.
-          </p>
-        </div>
-
-        <div class="format__grid">
-          <article class="fcard reveal">
-            <div class="fcard__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M5 21V8l6-4 6 4v13M9 21v-5h6v5M9 11h.01M15 11h.01"/></svg>
-            </div>
-            <h3>Производство + офис</h3>
-            <p>Гибкие пространства, совмещающие лёгкое производство и представительские зоны в одном здании.</p>
-          </article>
-
-          <article class="fcard reveal">
-            <div class="fcard__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/></svg>
-            </div>
-            <h3>Внутри города</h3>
-            <p>Доступ к метро и основным транспортным артериям. Персонал добирается без поездок за МКАД.</p>
-          </article>
-
-          <article class="fcard reveal">
-            <div class="fcard__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8ZM22 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-            </div>
-            <h3>Для малого и среднего бизнеса</h3>
-            <p>Создан для компаний, которым нужна современная городская площадка под лёгкое производство.</p>
-          </article>
-        </div>
       </div>
     </section>
 
@@ -539,49 +495,42 @@
     </section>
 
     <!-- ============ 7. О КОМПАНИИ ============ -->
-    <section class="section section--alt" id="company" aria-labelledby="company-title">
-      <div class="container">
-        <div class="company__grid company__grid--media">
-          <div class="company__lead reveal">
-            <p class="eyebrow">О компании</p>
-            <h2 class="section__title" id="company-title">АО «Эмуна&nbsp;Развитие»</h2>
-            <p class="company__text">
-              Многопрофильный инвестиционный холдинг, управляющий активами в сфере недвижимости.
-              Компания структурирует сделки, привлекает финансирование и управляет собственными
-              девелоперскими проектами.
-            </p>
-            <p class="company__text">
-              Портфель включает мультиформатные решения для бизнеса любого масштаба: от гибких
-              пространств Light Industrial, совмещающих производство и офисы, до индивидуальных
-              зданий под техническое задание клиента. Объекты «Эмуны», такие как промышленные
-              парки, отличаются продуманной логистикой, близостью к транспортным артериям и
-              мощной инженерной инфраструктурой. Компания инвестирует в социальные инициативы
-              и укрепляет экономику Москвы, создавая новые рабочие места.
-            </p>
-            <ul class="company__facts">
-            <li>
-              <span class="company__fact-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M6 21V7l6-4 6 4v14M10 12h4M10 16h4"/></svg></span>
-              Собственные девелоперские проекты
-            </li>
-            <li>
-              <span class="company__fact-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></span>
-              Структурирование сделок и финансирование
-            </li>
-            <li>
-              <span class="company__fact-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z"/></svg></span>
-              Промышленные парки с сильной инженерией
-            </li>
-            <li>
-              <span class="company__fact-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></span>
-              Социальные инициативы и рабочие места
-            </li>
-            </ul>
-          </div>
-
-          <div class="company__media reveal">
-            <img src="images/company-day.jpg" alt="Дневной рендер корпуса С комплекса Деловая20" loading="lazy" />
-          </div>
-        </div>
+    <!-- MEDIA: фоновый рендер (ночной вид корпуса А) -->
+    <section class="company-band theme-dark" id="company" aria-labelledby="company-title">
+      <img class="company-band__img" src="images/company-bg.jpg" alt="" />
+      <div class="company-band__scrim" aria-hidden="true"></div>
+      <div class="container company-band__inner">
+        <p class="eyebrow reveal">О компании</p>
+        <h2 class="section__title reveal" id="company-title">АО «Эмуна&nbsp;Развитие»</h2>
+        <p class="company-band__text reveal">
+          Многопрофильный инвестиционный холдинг, управляющий активами в сфере недвижимости.
+          Структурирует сделки, привлекает финансирование и управляет собственными
+          девелоперскими проектами.
+        </p>
+        <p class="company-band__text reveal">
+          Портфель включает мультиформатные решения для бизнеса любого масштаба — от гибких
+          пространств Light Industrial до индивидуальных зданий под техническое задание клиента.
+          Промышленные парки «Эмуны» отличаются продуманной логистикой, близостью к транспортным
+          артериям и мощной инженерной инфраструктурой.
+        </p>
+        <ul class="company-band__facts reveal">
+          <li>
+            <span class="company-band__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M6 21V7l6-4 6 4v14M10 12h4M10 16h4"/></svg></span>
+            Собственные девелоперские проекты
+          </li>
+          <li>
+            <span class="company-band__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 3v18h18M7 14l4-4 3 3 5-6"/></svg></span>
+            Структурирование сделок и финансирование
+          </li>
+          <li>
+            <span class="company-band__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-4Z"/></svg></span>
+            Промышленные парки с сильной инженерией
+          </li>
+          <li>
+            <span class="company-band__ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></span>
+            Социальные инициативы и рабочие места
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -598,68 +547,80 @@
           <!-- CRE.ru -->
           <a class="news-card reveal" href="https://cre.ru/news/101955" target="_blank" rel="noopener"
              aria-label="Публикация о проекте Деловая20 на CRE.ru — открыть оригинал в новой вкладке">
-            <span class="news-card__quote-mark" aria-hidden="true">&ldquo;</span>
-            <span class="news-card__badge">
-              <span class="wordmark wordmark--cre" aria-hidden="true">
-                <span class="wordmark__main">CRE</span><span class="wordmark__tld">.ru</span>
+            <div class="news-card__cover">
+              <img src="images/aerial-day.jpg" alt="" loading="lazy" />
+              <span class="news-card__badge">
+                <span class="wordmark wordmark--cre" aria-hidden="true">
+                  <span class="wordmark__main">CRE</span><span class="wordmark__tld">.ru</span>
+                </span>
               </span>
-            </span>
-            <span class="news-card__kicker">Публикация · 2026</span>
-            <span class="news-card__quote">
-              Отраслевое издание о коммерческой недвижимости — о городском индустриальном
-              центре Деловая20: лёгкое производство и офис в одном месте, внутри Москвы.
-            </span>
-            <span class="news-card__more">
-              Читать в источнике
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </span>
+            </div>
+            <div class="news-card__body">
+              <span class="news-card__kicker">Публикация · 2026</span>
+              <span class="news-card__quote">
+                Отраслевое издание о коммерческой недвижимости — о городском индустриальном
+                центре Деловая20: лёгкое производство и офис в одном месте, внутри Москвы.
+              </span>
+              <span class="news-card__more">
+                Читать в источнике
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </span>
+            </div>
           </a>
 
           <!-- РИА Недвижимость -->
           <a class="news-card reveal" href="https://realty.ria.ru/20260628/moskva-2101307599.html" target="_blank" rel="noopener"
              aria-label="Материал РИА Недвижимость о развитии индустриальной недвижимости в Москве — открыть оригинал в новой вкладке">
-            <span class="news-card__quote-mark" aria-hidden="true">&ldquo;</span>
-            <span class="news-card__badge">
-              <span class="wordmark wordmark--ria" aria-hidden="true">
-                <span class="wordmark__main">РИА</span>
-                <span class="wordmark__sub">Недвижимость</span>
+            <div class="news-card__cover">
+              <img src="images/night-b.jpg" alt="" loading="lazy" />
+              <span class="news-card__badge">
+                <span class="wordmark wordmark--ria" aria-hidden="true">
+                  <span class="wordmark__main">РИА</span>
+                  <span class="wordmark__sub">Недвижимость</span>
+                </span>
               </span>
-            </span>
-            <span class="news-card__kicker">Публикация · июнь 2026</span>
-            <span class="news-card__quote">
-              О спросе на площадки для лёгкого производства внутри Москвы и развитии
-              формата light industrial в черте города.
-            </span>
-            <span class="news-card__more">
-              Читать в источнике
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </span>
+            </div>
+            <div class="news-card__body">
+              <span class="news-card__kicker">Публикация · июнь 2026</span>
+              <span class="news-card__quote">
+                О спросе на площадки для лёгкого производства внутри Москвы и развитии
+                формата light industrial в черте города.
+              </span>
+              <span class="news-card__more">
+                Читать в источнике
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </span>
+            </div>
           </a>
 
           <!-- Telegram · мэр Москвы -->
           <a class="news-card reveal" href="https://t.me/mos_sobyanin/20523" target="_blank" rel="noopener"
              aria-label="Пост в Telegram-канале мэра Москвы о промышленном развитии столицы — открыть оригинал в новой вкладке">
-            <span class="news-card__quote-mark" aria-hidden="true">&ldquo;</span>
-            <span class="news-card__badge">
-              <span class="news-card__badge-ico" aria-hidden="true">
-                <svg class="tg-glyph" viewBox="0 0 240 240" width="26" height="26">
-                  <circle cx="120" cy="120" r="120" fill="#29a9eb"/>
-                  <path fill="#fff" d="M52 118c34-15 57-25 68-29 33-14 39-16 44-16 1 0 3 0 5 2 1 1 1 3 1 4 0 1 0 3-.2 5-2 20-9 68-13 90-1 9-4 12-7 12-6 1-11-4-17-8-9-6-14-10-23-16-10-7-3-11 2-17 1-2 27-25 27-27 0-.3-.1-.6-.3-.8-.3-.2-.7-.1-1 0-.4.1-16 10-47 30-4 3-8 4-12 4-4 0-11-2-17-4-7-2-13-3-12-7 0-2 3-4 9-6Z"/>
-                </svg>
+            <div class="news-card__cover">
+              <img src="images/side-c.jpg" alt="" loading="lazy" />
+              <span class="news-card__badge">
+                <span class="news-card__badge-ico" aria-hidden="true">
+                  <svg class="tg-glyph" viewBox="0 0 240 240" width="26" height="26">
+                    <circle cx="120" cy="120" r="120" fill="#29a9eb"/>
+                    <path fill="#fff" d="M52 118c34-15 57-25 68-29 33-14 39-16 44-16 1 0 3 0 5 2 1 1 1 3 1 4 0 1 0 3-.2 5-2 20-9 68-13 90-1 9-4 12-7 12-6 1-11-4-17-8-9-6-14-10-23-16-10-7-3-11 2-17 1-2 27-25 27-27 0-.3-.1-.6-.3-.8-.3-.2-.7-.1-1 0-.4.1-16 10-47 30-4 3-8 4-12 4-4 0-11-2-17-4-7-2-13-3-12-7 0-2 3-4 9-6Z"/>
+                  </svg>
+                </span>
+                <span class="wordmark wordmark--tg" aria-hidden="true">
+                  <span class="wordmark__main">Telegram</span>
+                </span>
               </span>
-              <span class="wordmark wordmark--tg" aria-hidden="true">
-                <span class="wordmark__main">Telegram</span>
+            </div>
+            <div class="news-card__body">
+              <span class="news-card__kicker">Публикация · 2026</span>
+              <span class="news-card__quote">
+                Из канала мэра Москвы: о промышленном развитии столицы и создании
+                новых рабочих мест внутри города.
               </span>
-            </span>
-            <span class="news-card__kicker">Публикация · 2026</span>
-            <span class="news-card__quote">
-              Из канала мэра Москвы: о промышленном развитии столицы и создании
-              новых рабочих мест внутри города.
-            </span>
-            <span class="news-card__more">
-              Открыть в Telegram
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </span>
+              <span class="news-card__more">
+                Открыть в Telegram
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </span>
+            </div>
           </a>
 
         </div>
@@ -812,7 +773,6 @@
 
       <div class="footer__col">
         <h4>Навигация</h4>
-        <a href="#format">Формат</a>
         <a href="#specs">Характеристики</a>
         <a href="#location">Локация</a>
         <a href="#form">Оставить заявку</a>
@@ -835,6 +795,6 @@
     <span class="lightbox__hint">Клик вне изображения или Esc — закрыть</span>
   </div>
 
-  <script src="script.js" defer></script>
+  <script src="script.js?v=2" defer></script>
 </body>
 </html>

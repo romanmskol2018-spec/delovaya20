@@ -105,6 +105,14 @@ document.addEventListener("DOMContentLoaded", () => {
     counters.forEach((c) => cObs.observe(c));
   }
 
+  /* интерактив: при наведении на «Цифры, которыми гордимся» число пере-анимируется */
+  if (!prefersReduced) {
+    document.querySelectorAll(".proud__item").forEach((item) => {
+      const numEl = item.querySelector("[data-count]");
+      if (numEl) item.addEventListener("pointerenter", () => runCounter(numEl));
+    });
+  }
+
   /* ---------- маска телефона +7 (___) ___-__-__ ---------- */
   const phone = document.getElementById("phone");
   const formatPhone = (digits) => {
