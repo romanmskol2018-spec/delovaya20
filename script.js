@@ -230,3 +230,76 @@ document.addEventListener("DOMContentLoaded", () => {
     form.querySelector("input")?.focus();
   });
 });
+
+/* =========================================================
+   HERO — параллакс на движение мыши.
+   Пишем только CSS-переменные (--par-x/--par-y) → композитинг
+   transform/translate, без ре-рендера. rAF + lerp, с очисткой.
+   ========================================================= */
+(function heroParallax() {
+  const init = () => {
+    const hero = document.querySelector(".hero");
+    if (!hero) return;
+
+    const reduceMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const pointerMQ = window.matchMedia("(hover: hover) and (pointer: fine)");
+
+    let raf = 0;
+    let active = false;
+    let tx = 0, ty = 0; // цель (−1..1)
+    let cx = 0, cy = 0; // текущее сглаженное значение
+
+    const loop = () => {
+      cx += (tx - cx) * 0.08;
+      cy += (ty - cy) * 0.08;
+      hero.style.setProperty("--par-x", cx.toFixed(4));
+      hero.style.setProperty("--par-y", cy.toFixed(4));
+      if (Math.abs(tx - cx) > 0.0005 || Math.abs(ty - cy) > 0.0005) {
+        raf = requestAnimationFrame(loop);
+      } else {
+        raf = 0;
+      }
+    };
+    const schedule = () => { if (!raf) raf = requestAnimationFrame(loop); };
+
+    const onMove = (e) => {
+      const r = hero.getBoundingClientRect();
+      tx = ((e.clientX - r.left) / r.width - 0.5) * 2;
+      ty = ((e.clientY - r.top) / r.height - 0.5) * 2;
+      schedule();
+    };
+    const onLeave = () => { tx = 0; ty = 0; schedule(); };
+
+    const enable = () => {
+      if (active) return;
+      active = true;
+      hero.addEventListener("pointermove", onMove);
+      hero.addEventListener("pointerleave", onLeave);
+    };
+    const disable = () => {
+      if (!active && !raf) return;
+      active = false;
+      hero.removeEventListener("pointermove", onMove);
+      hero.removeEventListener("pointerleave", onLeave);
+      if (raf) { cancelAnimationFrame(raf); raf = 0; }
+      hero.style.setProperty("--par-x", "0");
+      hero.style.setProperty("--par-y", "0");
+    };
+
+    const apply = () => {
+      if (!reduceMQ.matches && pointerMQ.matches) enable();
+      else disable();
+    };
+
+    apply();
+    reduceMQ.addEventListener?.("change", apply);
+    pointerMQ.addEventListener?.("change", apply);
+    window.addEventListener("pagehide", disable, { once: true });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", init, { once: true });
+  } else {
+    init();
+  }
+})();

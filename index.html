@@ -150,31 +150,40 @@
 
   <main>
     <!-- ============ 1. ПЕРВЫЙ ЭКРАН ============ -->
-    <section class="hero" aria-labelledby="hero-title">
+    <section class="hero theme-dark" aria-labelledby="hero-title">
       <!-- MEDIA: фоновый рендер комплекса (ночной вид корпуса С) -->
       <div class="hero__bg" aria-hidden="true">
         <img class="hero__photo" src="images/hero-night.jpg" alt="" fetchpriority="high" />
         <div class="hero__scrim"></div>
         <div class="hero__grid"></div>
+        <div class="hero__aurora"></div>
         <div class="hero__glow"></div>
+        <div class="hero__vignette"></div>
       </div>
 
+      <!-- Плавающая glass-карточка с ключевым преимуществом (декоративная) -->
+      <figure class="hero__card" aria-hidden="true">
+        <span class="hero__card-badge"><span class="hero__card-dot"></span>Внутри МКАД</span>
+        <span class="hero__card-value">7 мин</span>
+        <span class="hero__card-label">на авто до метро Кантемировская</span>
+      </figure>
+
       <div class="container hero__inner">
-        <p class="eyebrow reveal">Деловая20 · Urban Light Industrial</p>
-        <h1 class="hero__title reveal" id="hero-title">
+        <p class="eyebrow hero__eyebrow">Деловая20 · Urban Light Industrial</p>
+        <h1 class="hero__title" id="hero-title">
           Производство и офис <span class="accent-text">внутри Москвы</span>,<br />
           а не за МКАД
         </h1>
-        <p class="hero__lead reveal">
+        <p class="hero__lead">
           Мультифункциональный городской индустриальный центр для малого и среднего бизнеса.
-          Метро и главные транспортные артерии — рядом.
+          Метро и главные транспортные артерии рядом.
         </p>
-        <div class="hero__cta reveal">
+        <div class="hero__cta">
           <a class="btn btn--primary btn--lg" href="#form">Оставить заявку</a>
           <a class="btn btn--ghost btn--lg" href="#specs">Смотреть характеристики</a>
         </div>
 
-        <dl class="hero__stats reveal" aria-label="Ключевые цифры проекта">
+        <dl class="hero__stats" aria-label="Ключевые цифры проекта">
           <div class="hero__stat">
             <dt>Общая площадь</dt>
             <dd><span class="num" data-count data-target="50280" data-format="space">0</span> м²</dd>
@@ -273,7 +282,7 @@
 
     <!-- ============ ШОУКЕЙС: ВЕСЬ КОМПЛЕКС ============ -->
     <!-- MEDIA: аэровид всех корпусов ночью -->
-    <section class="showcase" aria-labelledby="showcase-title">
+    <section class="showcase theme-dark" aria-labelledby="showcase-title">
       <img class="showcase__img" src="images/showcase-aerial.jpg" alt="Аэровид комплекса Деловая20: три корпуса Urban Light Industrial ночью на фоне Москвы" loading="lazy" />
       <div class="showcase__overlay">
         <div class="container">
@@ -338,6 +347,38 @@
       </div>
     </section>
 
+    <!-- ============ ГАЛЕРЕЯ / ОБЛИК ПРОЕКТА ============ -->
+    <!-- MEDIA: рендеры корпусов (день/ночь, фасады) -->
+    <section class="section gallery" id="gallery" aria-labelledby="gallery-title">
+      <div class="container">
+        <div class="format__head">
+          <div class="reveal">
+            <p class="eyebrow">Архитектура</p>
+            <h2 class="section__title" id="gallery-title">Облик проекта</h2>
+          </div>
+          <p class="section__lead reveal">
+            Выразительная архитектура с узнаваемыми акцентами корпусов, продуманным
+            фасадным решением и мощной подсветкой в тёмное время суток.
+          </p>
+        </div>
+
+        <div class="gallery__grid reveal">
+          <figure class="gallery__item gallery__item--tall">
+            <img src="images/facade-a.jpg" alt="Фасадное решение корпуса A комплекса Деловая20" loading="lazy" />
+          </figure>
+          <figure class="gallery__item gallery__item--wide">
+            <img src="images/night-b.jpg" alt="Ночной вид корпуса B с подсветкой" loading="lazy" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/day-b.jpg" alt="Дневной вид корпуса B" loading="lazy" />
+          </figure>
+          <figure class="gallery__item">
+            <img src="images/side-c.jpg" alt="Боковой вид корпуса C" loading="lazy" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ 4. БОЛЬ КЛИЕНТА → РЕШЕНИЕ ============ -->
     <section class="section" id="problem" aria-labelledby="problem-title">
       <div class="container">
@@ -379,53 +420,86 @@
     </section>
 
     <!-- ============ 5. ЛОКАЦИЯ И ТРАНСПОРТ ============ -->
-    <section class="section section--alt" id="location" aria-labelledby="location-title">
+    <section class="section section--alt geo" id="location" aria-labelledby="location-title">
       <div class="container">
-        <div class="reveal">
-          <p class="eyebrow">Локация</p>
-          <h2 class="section__title" id="location-title">Транспортная доступность</h2>
+        <div class="format__head">
+          <div class="reveal">
+            <p class="eyebrow">Локация и транспорт</p>
+            <h2 class="section__title" id="location-title">Внутри Москвы, у метро и магистралей</h2>
+          </div>
+          <p class="section__lead reveal">
+            Деловая20 стоит в сформированной городской среде: рядом метро и пригородные
+            платформы, а выезд на МСД, МКАД и ТТК занимает считанные минуты.
+          </p>
+        </div>
+      </div>
+
+      <!-- Крупная интерактивная сцена: карта на всю ширину + плавающая стеклянная карточка -->
+      <div class="geo__stage theme-dark reveal">
+        <!-- MEDIA: Яндекс.Карта (map-widget v1, тёмная тема, метка на объекте) -->
+        <div class="geo__map">
+          <iframe
+            title="Яндекс.Карта: Деловая улица, 20, Москва"
+            src="https://yandex.ru/map-widget/v1/?ll=37.636526%2C55.624165&z=16&pt=37.636526,55.624165,pm2orm&theme=dark"
+            loading="lazy" allowfullscreen referrerpolicy="no-referrer-when-downgrade"></iframe>
         </div>
 
-        <div class="location__grid">
-          <div class="location__info reveal">
-            <p class="location__addr">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              Деловая улица, 20, Москва, 115477
-            </p>
+        <div class="geo__scrim" aria-hidden="true"></div>
 
-            <ul class="transport">
-              <li>
-                <span class="transport__ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M4 11h16M8 20l2-4M16 20l-2-4"/><circle cx="8.5" cy="13.5" r=".5" fill="currentColor"/><circle cx="15.5" cy="13.5" r=".5" fill="currentColor"/></svg>
-                </span>
-                <span><strong>ж/д платформа Чертаново</strong><br />20 минут пешком</span>
-              </li>
-              <li>
-                <span class="transport__ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18 8 6l4 8 4-8 4 12M4 18h16M4 18l-1 3M20 18l1 3"/></svg>
-                </span>
-                <span><strong>м. Кантемировская</strong><br />30 минут пешком · 7 минут на авто</span>
-              </li>
-              <li>
-                <span class="transport__ico" aria-hidden="true">
-                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 7h18M3 17h18"/></svg>
-                </span>
-                <span><strong>МСД — 0,5 км · МКАД — 7 км · ТТК — 11 км</strong><br />Прямой выезд на главные магистрали</span>
-              </li>
-            </ul>
+        <div class="geo__overlay">
+          <div class="geo__overlay-inner">
+            <div class="geo__panel reveal">
+              <span class="geo__eyebrow">
+                <span class="geo__dot" aria-hidden="true"></span>
+                Как добраться
+              </span>
 
-            <a class="map-link" href="https://yandex.ru/maps/?pt=37.636526,55.624165&z=16&l=map" target="_blank" rel="noopener">
-              Открыть в Яндекс.Картах
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
-            </a>
-          </div>
+              <p class="geo__addr">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                <span>
+                  Деловая улица, 20
+                  <span class="geo__addr-sub">Москва, 115477</span>
+                </span>
+              </p>
 
-          <div class="location__map reveal">
-            <!-- MEDIA: при желании замените OSM на брендовую Яндекс.Карту с фирменной меткой -->
-            <iframe
-              title="Карта: Деловая улица, 20, Москва"
-              src="https://www.openstreetmap.org/export/embed.html?bbox=37.6165%2C55.6162%2C37.6565%2C55.6322&layer=mapnik&marker=55.624165%2C37.636526"
-              loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <ul class="geo__transport">
+                <li>
+                  <span class="geo__ico" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="12" rx="2"/><path d="M4 11h16M8 20l2-4M16 20l-2-4"/><circle cx="8.5" cy="13.5" r=".5" fill="currentColor"/><circle cx="15.5" cy="13.5" r=".5" fill="currentColor"/></svg>
+                  </span>
+                  <span class="geo__transport-txt">
+                    <strong>Платформа Чертаново</strong>
+                    <span>20 минут пешком</span>
+                  </span>
+                </li>
+                <li>
+                  <span class="geo__ico" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18 8 6l4 8 4-8 4 12M4 18h16M4 18l-1 3M20 18l1 3"/></svg>
+                  </span>
+                  <span class="geo__transport-txt">
+                    <strong>Метро Кантемировская</strong>
+                    <span>30 минут пешком · 7 минут на авто</span>
+                  </span>
+                </li>
+              </ul>
+
+              <div class="geo__pills" aria-label="Расстояние до магистралей">
+                <span class="geo__pill"><span class="geo__pill-key">МСД</span><span class="geo__pill-val">0,5 км</span></span>
+                <span class="geo__pill"><span class="geo__pill-key">МКАД</span><span class="geo__pill-val">7 км</span></span>
+                <span class="geo__pill"><span class="geo__pill-key">ТТК</span><span class="geo__pill-val">11 км</span></span>
+              </div>
+
+              <div class="geo__actions">
+                <a class="btn btn--primary btn--block" href="https://yandex.ru/maps/?rtext=~55.624165,37.636526&rtt=auto" target="_blank" rel="noopener" aria-label="Построить маршрут до Деловая улица, 20 в Яндекс.Картах">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><circle cx="6" cy="19" r="2"/><circle cx="18" cy="5" r="2"/><path d="M8 19h7a3 3 0 0 0 0-6H9a3 3 0 0 1 0-6h7"/></svg>
+                  Построить маршрут
+                </a>
+                <a class="btn btn--ghost btn--block" href="https://yandex.ru/maps/?ll=37.636526,55.624165&z=16&pt=37.636526,55.624165,pm2orm" target="_blank" rel="noopener">
+                  Открыть в Яндекс.Картах
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+                </a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -509,31 +583,91 @@
       </div>
     </section>
 
-    <!-- ============ 8. НОВОСТИ И СОБЫТИЯ ============ -->
+    <!-- ============ 8. НОВОСТИ И СОБЫТИЯ / СМИ О НАС ============ -->
     <section class="section" id="news" aria-labelledby="news-title">
       <div class="container">
         <div class="reveal">
-          <p class="eyebrow">Медиа</p>
+          <p class="eyebrow">СМИ о нас</p>
           <h2 class="section__title" id="news-title">Новости и события</h2>
         </div>
 
         <div class="news__grid">
-          <a class="news-card reveal" href="https://cre.ru/news/101955" target="_blank" rel="noopener">
-            <span class="news-card__source">CRE.ru</span>
-            <span class="news-card__title">Публикация о проекте в отраслевом издании о коммерческой недвижимости</span>
-            <span class="news-card__more">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
+          <!-- CRE.ru -->
+          <a class="news-card reveal" href="https://cre.ru/news/101955" target="_blank" rel="noopener"
+             aria-label="Публикация о проекте Деловая20 на CRE.ru — открыть оригинал в новой вкладке">
+            <span class="news-card__quote-mark" aria-hidden="true">&ldquo;</span>
+            <span class="news-card__badge">
+              <span class="wordmark wordmark--cre" aria-hidden="true">
+                <span class="wordmark__main">CRE</span><span class="wordmark__tld">.ru</span>
+              </span>
+            </span>
+            <span class="news-card__kicker">Публикация · 2026</span>
+            <span class="news-card__quote">
+              Отраслевое издание о коммерческой недвижимости — о городском индустриальном
+              центре Деловая20: лёгкое производство и офис в одном месте, внутри Москвы.
+            </span>
+            <span class="news-card__more">
+              Читать в источнике
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </span>
           </a>
-          <a class="news-card reveal" href="https://realty.ria.ru/20260628/moskva-2101307599.html" target="_blank" rel="noopener">
-            <span class="news-card__source">РИА Недвижимость</span>
-            <span class="news-card__title">Материал о развитии индустриальной недвижимости в Москве</span>
-            <span class="news-card__more">Читать <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
+          <!-- РИА Недвижимость -->
+          <a class="news-card reveal" href="https://realty.ria.ru/20260628/moskva-2101307599.html" target="_blank" rel="noopener"
+             aria-label="Материал РИА Недвижимость о развитии индустриальной недвижимости в Москве — открыть оригинал в новой вкладке">
+            <span class="news-card__quote-mark" aria-hidden="true">&ldquo;</span>
+            <span class="news-card__badge">
+              <span class="wordmark wordmark--ria" aria-hidden="true">
+                <span class="wordmark__main">РИА</span>
+                <span class="wordmark__sub">Недвижимость</span>
+              </span>
+            </span>
+            <span class="news-card__kicker">Публикация · июнь 2026</span>
+            <span class="news-card__quote">
+              О спросе на площадки для лёгкого производства внутри Москвы и развитии
+              формата light industrial в черте города.
+            </span>
+            <span class="news-card__more">
+              Читать в источнике
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </span>
           </a>
-          <a class="news-card reveal" href="https://t.me/mos_sobyanin/20523" target="_blank" rel="noopener">
-            <span class="news-card__source">Telegram · мэр Москвы</span>
-            <span class="news-card__title">Пост о промышленном развитии столицы</span>
-            <span class="news-card__more">Смотреть <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+
+          <!-- Telegram · мэр Москвы -->
+          <a class="news-card reveal" href="https://t.me/mos_sobyanin/20523" target="_blank" rel="noopener"
+             aria-label="Пост в Telegram-канале мэра Москвы о промышленном развитии столицы — открыть оригинал в новой вкладке">
+            <span class="news-card__quote-mark" aria-hidden="true">&ldquo;</span>
+            <span class="news-card__badge">
+              <span class="news-card__badge-ico" aria-hidden="true">
+                <svg class="tg-glyph" viewBox="0 0 240 240" width="26" height="26">
+                  <circle cx="120" cy="120" r="120" fill="#29a9eb"/>
+                  <path fill="#fff" d="M52 118c34-15 57-25 68-29 33-14 39-16 44-16 1 0 3 0 5 2 1 1 1 3 1 4 0 1 0 3-.2 5-2 20-9 68-13 90-1 9-4 12-7 12-6 1-11-4-17-8-9-6-14-10-23-16-10-7-3-11 2-17 1-2 27-25 27-27 0-.3-.1-.6-.3-.8-.3-.2-.7-.1-1 0-.4.1-16 10-47 30-4 3-8 4-12 4-4 0-11-2-17-4-7-2-13-3-12-7 0-2 3-4 9-6Z"/>
+                </svg>
+              </span>
+              <span class="wordmark wordmark--tg" aria-hidden="true">
+                <span class="wordmark__main">Telegram</span>
+              </span>
+            </span>
+            <span class="news-card__kicker">Публикация · 2026</span>
+            <span class="news-card__quote">
+              Из канала мэра Москвы: о промышленном развитии столицы и создании
+              новых рабочих мест внутри города.
+            </span>
+            <span class="news-card__more">
+              Открыть в Telegram
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+            </span>
           </a>
+
         </div>
+
+        <p class="news__note reveal">
+          <span class="news__note-ico" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 4 6v6c0 5 3.5 8 8 10 4.5-2 8-5 8-10V6l-8-3Z"/><path d="m9 12 2 2 4-4"/></svg>
+          </span>
+          Каждое упоминание ведёт на оригинал публикации
+        </p>
       </div>
     </section>
 
@@ -643,7 +777,7 @@
   </main>
 
   <!-- ============ 10. ФУТЕР ============ -->
-  <footer class="footer">
+  <footer class="footer theme-dark">
     <div class="container footer__inner">
       <div class="footer__brand">
         <a class="brand" href="#top" aria-label="Деловая20 — наверх">
