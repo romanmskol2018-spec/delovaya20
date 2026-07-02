@@ -19,14 +19,13 @@
   <meta property="og:description" content="Современное производство и офис в одном месте, внутри Москвы у метро. Лайт индастриал внутри МКАД. Аренда и продажа — по запросу." />
   <meta property="og:locale" content="ru_RU" />
   <meta property="og:url" content="https://delovaya20.ru/" />
-  <!-- MEDIA: превью-картинка для соцсетей 1200×630, положите файл og-cover.jpg рядом с index.html -->
-  <meta property="og:image" content="og-cover.jpg" />
+  <meta property="og:image" content="images/og-cover.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Деловая20 — Urban Light Industrial внутри Москвы" />
   <meta name="twitter:description" content="Современное производство и офис внутри Москвы, у метро. Аренда и продажа — по запросу." />
-  <meta name="twitter:image" content="og-cover.jpg" />
+  <meta name="twitter:image" content="images/og-cover.jpg" />
 
   <!-- Favicon (SVG-заглушка + inline fallback) -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg" />
@@ -38,6 +37,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
+  <!-- Ускоряем LCP: заранее грузим фон первого экрана -->
+  <link rel="preload" as="image" href="images/hero-night.jpg" fetchpriority="high" />
 
   <!-- Schema.org: Organization -->
   <script type="application/ld+json">
@@ -150,8 +151,10 @@
   <main>
     <!-- ============ 1. ПЕРВЫЙ ЭКРАН ============ -->
     <section class="hero" aria-labelledby="hero-title">
-      <!-- MEDIA: сюда фоновое фото/рендер комплекса (широкое, тёмное). Пока — CSS-геометрия. -->
+      <!-- MEDIA: фоновый рендер комплекса (ночной вид корпуса С) -->
       <div class="hero__bg" aria-hidden="true">
+        <img class="hero__photo" src="images/hero-night.jpg" alt="" fetchpriority="high" />
+        <div class="hero__scrim"></div>
         <div class="hero__grid"></div>
         <div class="hero__glow"></div>
       </div>
@@ -182,7 +185,7 @@
           </div>
           <div class="hero__stat">
             <dt>Срок сдачи</dt>
-            <dd>4 кв. <span class="num" data-count data-target="2027">0</span></dd>
+            <dd>4 кв. <span class="num">2027</span></dd>
           </div>
           <div class="hero__stat">
             <dt>Инвестиции</dt>
@@ -264,6 +267,18 @@
             <span class="proud__unit">км</span>
             <span class="proud__label">До ТТК</span>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ ШОУКЕЙС: ВЕСЬ КОМПЛЕКС ============ -->
+    <!-- MEDIA: аэровид всех корпусов ночью -->
+    <section class="showcase" aria-labelledby="showcase-title">
+      <img class="showcase__img" src="images/showcase-aerial.jpg" alt="Аэровид комплекса Деловая20: три корпуса Urban Light Industrial ночью на фоне Москвы" loading="lazy" />
+      <div class="showcase__overlay">
+        <div class="container">
+          <h2 class="showcase__title reveal" id="showcase-title">Три корпуса в единой городской среде</h2>
+          <p class="showcase__text reveal">50 280 м² Light Industrial с продуманной логистикой и мощной инженерной инфраструктурой — внутри Москвы, у транспортных артерий.</p>
         </div>
       </div>
     </section>
@@ -450,7 +465,7 @@
     <!-- ============ 7. О КОМПАНИИ ============ -->
     <section class="section section--alt" id="company" aria-labelledby="company-title">
       <div class="container">
-        <div class="company__grid">
+        <div class="company__grid company__grid--media">
           <div class="company__lead reveal">
             <p class="eyebrow">О компании</p>
             <h2 class="section__title" id="company-title">АО «Эмуна&nbsp;Развитие»</h2>
@@ -467,9 +482,7 @@
               мощной инженерной инфраструктурой. Компания инвестирует в социальные инициативы
               и укрепляет экономику Москвы, создавая новые рабочие места.
             </p>
-          </div>
-
-          <ul class="company__facts reveal">
+            <ul class="company__facts">
             <li>
               <span class="company__fact-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 21h18M6 21V7l6-4 6 4v14M10 12h4M10 16h4"/></svg></span>
               Собственные девелоперские проекты
@@ -486,7 +499,12 @@
               <span class="company__fact-ico" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 1 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></svg></span>
               Социальные инициативы и рабочие места
             </li>
-          </ul>
+            </ul>
+          </div>
+
+          <div class="company__media reveal">
+            <img src="images/company-day.jpg" alt="Дневной рендер корпуса С комплекса Деловая20" loading="lazy" />
+          </div>
         </div>
       </div>
     </section>
